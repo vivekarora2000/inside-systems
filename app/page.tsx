@@ -1,5 +1,5 @@
-import InsideSearch from './inside-search';
+import DatabaseHub from './database-hub';
 
 export default function Home() {
-  return <InsideSearch />;
+  return <DatabaseHub />;
 }

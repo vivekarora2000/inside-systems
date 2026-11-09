@@ -1,28 +1,30 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://inside-search.vivekarora2000.chatgpt.site'),
-  title: 'Inside Search — See why it ranked',
-  description: 'Search a fictional city, inspect every score, and change the rules of a real browser-based search engine.',
+  metadataBase: new URL(siteUrl),
+  title: 'Inside Systems — Elasticsearch and Cassandra, explained',
+  description: 'Interactive field guides for understanding the machinery inside Elasticsearch and Apache Cassandra.',
   icons: { icon: '/favicon.svg' },
   openGraph: {
-    title: 'Inside Search — See why it ranked',
-    description: 'Search for something. Inspect the inverted index. Change the ranking rules.',
+    title: 'Inside Systems',
+    description: 'Explore Elasticsearch and Cassandra from first principles.',
     type: 'website',
-    url: 'https://inside-search.vivekarora2000.chatgpt.site',
-    images: [{ url: '/og.png', width: 1732, height: 908, alt: 'Inside Search — inspect the index and change the rules' }],
+    url: siteUrl,
+    images: [{ url: '/og.png', width: 1734, height: 907, alt: 'Inside Systems' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inside Search — See why it ranked',
-    description: 'Search for something. Inspect the inverted index. Change the ranking rules.',
+    title: 'Inside Systems',
+    description: 'Explore Elasticsearch and Cassandra from first principles.',
     images: ['/og.png'],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#f3efe6',
+  themeColor: '#f7f7f2',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
