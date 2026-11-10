@@ -113,14 +113,16 @@ Implementation and lesson copy were checked against current Elastic documentatio
 - `app/database-hub.tsx`: database selection and URL routing.
 - `app/corpus.ts`: preserved 48-document playground corpus.
 
-## Deploy and connect a domain
+## Deploy to `inside-systems.aroravivek.com`
 
-This is a standard Next.js application. The simplest deployment path is:
+The app is configured as a static export. `npm run build` generates ordinary HTML, CSS, and JavaScript in `out/`. The included GitHub Actions workflow deploys that folder to GitHub Pages whenever `main` changes.
 
-1. Push the repository to GitHub.
-2. Import the repository into Vercel.
-3. Set `NEXT_PUBLIC_SITE_URL` to the final production URL.
-4. Add the purchased domain under the project’s **Settings → Domains** page.
-5. Add the DNS records Vercel shows at your domain registrar.
+After pushing the repository:
 
-Vercel will build with `npm run build` and deploy every push to `main`. The same project can also run on any Node.js host with `npm run build` followed by `npm run start`.
+1. Open the repository’s **Settings → Pages** and select **GitHub Actions** as the source.
+2. In the DNS settings for `aroravivek.com`, create a CNAME record:
+   - Name/host: `inside-systems`
+   - Target/value: `vivekarora2000.github.io`
+3. In **Settings → Pages**, confirm the custom domain is `inside-systems.aroravivek.com` and enable HTTPS after DNS verification succeeds.
+
+The committed `public/CNAME` file preserves the custom domain in each static deployment.
