@@ -7,7 +7,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'Inside Systems — Elasticsearch and Cassandra, explained',
   description: 'Interactive field guides for understanding the machinery inside Elasticsearch and Apache Cassandra.',
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [{ url: '/favicon.svg?v=2', type: 'image/svg+xml' }],
+    shortcut: '/favicon.svg?v=2',
+  },
   openGraph: {
     title: 'Inside Systems',
     description: 'Explore Elasticsearch and Cassandra from first principles.',
